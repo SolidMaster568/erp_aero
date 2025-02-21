@@ -12,6 +12,7 @@ require("dotenv").config();
 const app = express();
 
 const sequelize = require("./config/database");
+const authRoutes = require("./routes/auth");
 
 // Middleware
 app.use(
@@ -25,6 +26,10 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Routes
+app.use("/", authRoutes);
+
+// Database sync and server start
 const PORT = process.env.PORT || 5680;
 
 async function startServer() {

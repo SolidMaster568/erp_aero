@@ -72,7 +72,7 @@ Please refer to the `scripts` part of **./package.json** file:
 
 ## ![Postman GetFileList Test](assets/img/screenshots/screenshot_getfilelist.png)
 
-- http://localhost:5680/file/list?page=2&list_size=5
+- http://localhost:5680/file/list?page=2&page_size=5
 
 ## ![Postman GetFileList Test](assets/img/screenshots/screenshot_getfilelist1.png)
 

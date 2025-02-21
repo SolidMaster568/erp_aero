@@ -1,6 +1,6 @@
 /**
  * @author Arsen Grigoryan
- * @email grigoryan.arsen65@gmail
+ * @email grigoryan.arsen65@gmail.com
  * @date 21.02.2025
  */
 const { Sequelize } = require("sequelize");

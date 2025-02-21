@@ -1,6 +1,6 @@
 /**
  * @author Arsen Grigoryan
- * @email grigoryan.arsen65@gmail
+ * @email grigoryan.arsen65@gmail.com
  * @date 21.02.2025
  */
 const express = require("express");
@@ -12,7 +12,7 @@ const router = express.Router(); // router is an instance of express router
 
 router.post(
   "/signup",
-  // [body("id").notEmpty(), body("password").isLength({ min: 6 })], // id must not be empty, password must be at least 6 characters
+  [body("id").notEmpty(), body("password").isLength({ min: 6 })], // id must not be empty, password must be at least 6 characters
   authController.signup
 );
 

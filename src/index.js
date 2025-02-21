@@ -1,6 +1,6 @@
 /**
  * @author Arsen Grigoryan
- * @email grigoryan.arsen65@gmail
+ * @email grigoryan.arsen65@gmail.com
  * @date 21.02.2025
  */
 const express = require("express");
@@ -13,6 +13,7 @@ const app = express();
 
 const sequelize = require("./config/database");
 const authRoutes = require("./routes/auth");
+const fileRoutes = require("./routes/file");
 
 // Middleware
 app.use(
@@ -28,6 +29,11 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use("/", authRoutes);
+app.use("/file", fileRoutes);
+
+// Create uploads directory if it doesn't exist
+const uploadPath = path.join(__dirname, "..", process.env.FILE_UPLOAD_PATH);
+fs.mkdir(uploadPath, { recursive: true }).catch(console.error);
 
 // Database sync and server start
 const PORT = process.env.PORT || 5680;
